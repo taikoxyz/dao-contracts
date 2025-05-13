@@ -1,6 +1,9 @@
 # Deployment list
 
 ## Mainnet
+### May 13th, 2025
+Deployed `SecurityCouncilDrill` at:
+- `0x72B7dB404c4F11277A53081bF48580D6Bf4bC100`
 
 ## Holesly
 
