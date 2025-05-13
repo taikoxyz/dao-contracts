@@ -15,6 +15,8 @@ import {PluginRepoFactory} from "@aragon/osx/framework/plugin/repo/PluginRepoFac
 import {PluginSetupProcessor} from "@aragon/osx/framework/plugin/setup/PluginSetupProcessor.sol";
 import {GovernanceERC20Mock} from "../test/mocks/GovernanceERC20Mock.sol";
 import {TaikoL1Mock} from "../test/mocks/TaikoL1Mock.sol";
+import {SecurityCouncilDrill} from "../src/SecurityCouncilDrill.sol";
+import {ERC1967Proxy} from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
 
 contract Deploy is Script {
     MultisigPluginSetup multisigPluginSetup;
@@ -64,6 +66,14 @@ contract Deploy is Script {
 
         // Done
         printDeploymentSummary(factory, delegationWall);
+        // deploy the SC drill
+        address impl = address(new SecurityCouncilDrill());
+        address proxy = address(
+            new ERC1967Proxy(
+                impl, abi.encodeCall(SecurityCouncilDrill.initialize, (address(factory.getDeployment().signerList)))
+            )
+        );
+        console.log("\nDeployed SecurityCouncilDrill at:", address(proxy));
     }
 
     function getProductionSettings() internal view returns (TaikoDaoFactory.DeploymentSettings memory settings) {
