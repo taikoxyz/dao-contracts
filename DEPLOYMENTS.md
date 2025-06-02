@@ -5,7 +5,35 @@
 Deployed `SecurityCouncilDrill` at:
 - `0x72B7dB404c4F11277A53081bF48580D6Bf4bC100`
 
-## Holesly
+### May 1st, 2025
+Mainnet deployment using `.env.mainnet-deployment`
+```
+  Deploying from: 0x85f21919ed6046d7CE1F36a613eBA8f5EaC3d070
+  Chain ID: 1
+  Using production settings
+  
+  Factory: 0xEa53A99A2bb11a11c03Ef2A1CeD336c9B03908FF
+  
+  DAO: 0x9CDf589C941ee81D75F34d3755671d614f7cf261
+  Voting token: 0x10dea67478c5F8C5E2D90e5E9B26dBe60c54d800
+  Taiko Bridge: 0xd60247c6848B7Ca29eDdF63AA924E53dB6Ddd8EC
+  
+  Plugins
+  - Multisig plugin: 0xD7dA1C25E915438720692bC55eb3a7170cA90321
+  - Emergency multisig plugin: 0x2AffADEb2ef5e1F2a7F58964ee191F1e88317ECd
+  - Optimistic token voting plugin: 0x989E348275b659d36f8751ea1c10D146211650BE
+  
+  Helpers
+  - Signer list 0x0F95E6968EC1B28c794CF1aD99609431de5179c2
+  - Encryption registry 0x2eFDb93a3B87b930E553d504db67Ee41c69C42d1
+  - Delegation wall 0x402816c92f7F978C855190F367B3C21239efE692
+  
+  Plugin repositories
+  - Multisig plugin repository: 0x2CBe2F0907F99B5d0bECF8Be9fF623B7214389C2
+  - Emergency multisig plugin repository: 0x03Bfac9c11702ac9c239610a45ED58b80E82DA0b
+  - Optimistic token voting plugin repository: 0x05960136abD6a3E87C67860C71859e91070735D1
+```
+## Holesky
 
 ### April 28th 2025
 Reduced exit windows + SecurityCouncilDrill
@@ -38,7 +66,6 @@ Reduced exit windows + SecurityCouncilDrill
 Deployed SecurityCouncilDrill at: 0x2d13dc3A1aB2AfFD21239d33b1306b6f463aE751
 
 ```
-
 ### December 5th 2024
 
 Deployment for internal testing:
