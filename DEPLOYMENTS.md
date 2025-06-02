@@ -1,10 +1,6 @@
 # Deployment list
 
 ## Mainnet
-### May 13th, 2025
-Deployed `SecurityCouncilDrill` at:
-- `0x72B7dB404c4F11277A53081bF48580D6Bf4bC100`
-
 ### May 1st, 2025
 Mainnet deployment using `.env.mainnet-deployment`
 ```
@@ -33,39 +29,7 @@ Mainnet deployment using `.env.mainnet-deployment`
   - Emergency multisig plugin repository: 0x03Bfac9c11702ac9c239610a45ED58b80E82DA0b
   - Optimistic token voting plugin repository: 0x05960136abD6a3E87C67860C71859e91070735D1
 ```
-## Holesky
-
-### April 28th 2025
-Reduced exit windows + SecurityCouncilDrill
-```
-      Deploying from: 0x4100a9B680B1Be1F10Cb8b5a57fE59eA77A8184e
-  Chain ID: 17000
-  Using production settings
-
-  Factory: 0xd60C1C9e342B98f0eFeB98C80fA8634e0E350C97
-
-  DAO: 0x05E0113B709e377a0882244B81a6B54f521c880f
-  Voting token: 0x6490E12d480549D333499236fF2Ba6676C296011
-  Taiko Bridge: 0xA098b76a3Dd499D3F6D58D8AcCaFC8efBFd06807
-
-  Plugins
-  - Multisig plugin: 0x41D8e598819e2ce231B0c562C96cbfAb91Cb87CC
-  - Emergency multisig plugin: 0x5b27206ab2654125205077226196B5e3D4c38b94
-  - Optimistic token voting plugin: 0x8bBDF344829191095Ee802499068316835f1e7a0
-
-  Helpers
-  - Signer list 0x1aDf6Fb3Df2870Ed415b87AAE7042c8882dAd0dE
-  - Encryption registry 0x7b0dD81b32eF989dB3269FC94E4b363212CE2Be4
-  - Delegation wall 0x3012aEff25F2d6F5c160bEdABfF99D7ed15A5537
-
-  Plugin repositories
-  - Multisig plugin repository: 0xa9b945ef3593B13dfd9B31571fB0Aa58fe3D43DB
-  - Emergency multisig plugin repository: 0x304F5D51FF9B5988cbDD51cf817d76D1Ce316Ffc
-  - Optimistic token voting plugin repository: 0x85E30Ae914E2fae3f511974d056cdaB68E55532b
-
-Deployed SecurityCouncilDrill at: 0x2d13dc3A1aB2AfFD21239d33b1306b6f463aE751
-
-```
+## Holesly
 ### December 5th 2024
 
 Deployment for internal testing:
@@ -78,23 +42,23 @@ Deployment for internal testing:
   Chain ID: 17000
   Using test token settings
   Minting test tokens for the multisig members and the bridge
-
+  
   Factory: 0x5Ecd6635598ea0E15Ce1Adc2681542872fB046B3
-
+  
   DAO: 0x9911fB2aa1E18b2E95dB84EDEaCe80e1FaB403a3
   Voting token: 0x257fB8b988D0af2ceC5B599b867E3B833D2C0F92
   Taiko Bridge: 0x0000000000000000000000000000001234567890
-
+  
   Plugins
   - Multisig plugin: 0x757a214760f28e24cC14e61A89eB4eeE2E039654
   - Emergency multisig plugin: 0x1146159D19A25a5b092F2BEbb19841bCda4A62Db
   - Optimistic token voting plugin: 0xE5D346143aCDFCE5A2f0663cbD762d456d429E3a
-
+  
   Helpers
   - Signer list 0x8C4211DF1d32785117f12b84b68C5A60980857Ab
   - Encryption registry 0xE8b63e29D3eC1fbF5032d298DD8CC2C5d42C1a27
   - Delegation wall 0x979A1a38cC0036E4E605747b20B2b3661B2ed07C
-
+  
   Plugin repositories
   - Multisig plugin repository: 0xc08fBb91988D63b716e6074abfDC42c050BD4Fb4
   - Emergency multisig plugin repository: 0xAa141C988DDB51b7c72C1253ae2a75A3065a4369
@@ -114,23 +78,23 @@ Deployment for internal testing:
   Chain ID: 17000
   Using test token settings
   Minting test tokens for the multisig members and the bridge
-
+  
   Factory: 0x7b9B81258d4b52Fb6D4Fb3C597bCeD2652F00bc8
-
+  
   DAO: 0x9Fe7b040cfD4CA67BB44714aa9c9D2F5234780BE
   Voting token: 0x690b92470Aa1500CFc64af5adAb4A9D4c0a0a5f0
   Taiko Bridge: 0x0000000000000000000000000000001234567890
-
+  
   Plugins
   - Multisig plugin: 0xEAfaB9a95dC75C51d94b2cad2D675296914fA8a6
   - Emergency multisig plugin: 0xF0847b600eebe43da7FD6bA1C9E325EC8408cB4F
   - Optimistic token voting plugin: 0x892d99d271844A7C39757adcD177fbE2EFD3adbb
-
+  
   Helpers
   - Signer list 0x08e2003Aab54d8C981A3bc5c48bB121B9eb57467
   - Encryption registry 0x5Ec236003Cf8493cF2621E5daCAbD60f0a7A31Ae
   - Delegation wall 0xe2e3b8a20048F699d40c1d4394BE62B30560fa6f
-
+  
   Plugin repositories
   - Multisig plugin repository: 0xe797aFeABf9Cf5a0e86EA2B5D3a5F20397A98514
   - Emergency multisig plugin repository: 0x87322002988a7AD7864cF89233b43D7CAE9289DA
@@ -151,23 +115,23 @@ Deployment with the encryption registry available
   Chain ID: 17000
   Using test token settings
   Minting test tokens for the multisig members and the bridge
-
+  
   Factory: 0x7D3dA38E856f002f4623B0D32a494E358f72adC9
-
+  
   DAO: 0x8caD8b62769710233f319611d064462b633Bbb8C
   Voting token: 0x18EE0C13EC97a60fc190bABB348FD87421368920
   Taiko Bridge: 0x0000000000000000000000000000001234567890
-
+  
   Plugins
   - Multisig plugin: 0xc880dB28A9105e6D69d30E93d99E38eFE84c54CB
   - Emergency multisig plugin: 0x3bE6294EB67A3501bF091fD229282F2A51c532d2
   - Optimistic token voting plugin: 0xBB249c027c5De908288104F665A605ceC88ad6CE
-
+  
   Helpers
   - Signer list 0x7716DcB9B83f5f9fB5266767841c3F29555cE2d5
   - Encryption registry 0x94224B656D7D174B2Aa97FFCB188A847E6EA4511
   - Delegation wall 0xb8D78b40014D36F83dDc8219c0621d35E8043167
-
+  
   Plugin repositories
   - Multisig plugin repository: 0x2d870FCedF2C1204839C3b8bca2Bf6e632b4E602
   - Emergency multisig plugin repository: 0xe069Ae1DCB19A9DE9C516097FaC20ea070311D48
