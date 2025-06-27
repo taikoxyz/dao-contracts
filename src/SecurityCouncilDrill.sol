@@ -20,10 +20,12 @@ contract SecurityCouncilDrill is
     mapping(uint256 => mapping(address => bool)) public hasPinged;
     /// @notice The address of the SignerList contract
     address public signerList;
+    /// @notice Targets for each drill; [0x0] is a global target
+    mapping(uint256 => address[]) public targets;
 
     /// @notice Events
     event SignerListUpdated(address indexed signerList);
-    event DrillStarted(uint256 indexed drillNonce);
+    event DrillStarted(uint256 indexed drillNonce, address[] targets);
     event DrillPinged(uint256 indexed drillNonce, address indexed member);
     /// @notice Errors
 
@@ -56,12 +58,43 @@ contract SecurityCouncilDrill is
         emit SignerListUpdated(_signerList);
     }
 
+    /// @notice Internal method to start the drill
+    /// @param _targets The addresses of the target contracts
+    /// @dev Increments the drill nonce
+    /// @dev Emits the DrillStarted event
+    function _start(address[] memory _targets) internal virtual {
+        drillNonce++;
+        targets[drillNonce] = _targets;
+        emit DrillStarted(drillNonce, _targets);
+    }
+
     /// @notice Starts the drill
     /// @dev Only the admin can call this function
     /// @dev Increments the drill nonce
     function start() external virtual onlyRole(DEFAULT_ADMIN_ROLE) {
-        drillNonce++;
-        emit DrillStarted(drillNonce);
+        _start(new address[](0));
+    }
+
+    // @notice Starts the drill with a single target
+    /// @param _target The address of the target contract
+    /// @dev Only the admin can call this function
+    /// @dev Increments the drill nonce
+    function start(address _target) external virtual onlyRole(DEFAULT_ADMIN_ROLE) {
+        address[] memory _targets = new address[](1);
+        _targets[0] = _target;
+        _start(_targets);
+    }
+
+    /// @notice Starts the drill with multiple targets
+    /// @param _targets The addresses of the target contracts
+    /// @dev Only the admin can call this function
+    /// @dev Increments the drill nonce
+    function start(address[] calldata _targets) external virtual onlyRole(DEFAULT_ADMIN_ROLE) {
+        _start(_targets);
+    }
+
+    function getTargets(uint256 _drillNonce) external view returns (address[] memory) {
+        return targets[_drillNonce];
     }
 
     /// @notice Pings the drill
@@ -92,5 +125,5 @@ contract SecurityCouncilDrill is
     /// @dev This empty reserved space is put in place to allow future versions to add new
     /// variables without shifting down storage in the inheritance chain.
     /// https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps
-    uint256[50] private __gap;
+    uint256[47] private __gap;
 }
