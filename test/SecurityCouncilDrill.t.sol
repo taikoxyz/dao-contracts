@@ -15,6 +15,8 @@ contract SecurityCouncilDrillTest is AragonTest {
     address immutable SIGNER_LIST_BASE = address(new SignerList());
     address[] signers;
 
+    event DrillStarted(uint256 indexed drillNonce, address[] targets);
+
     function setUp() public {
         vm.startPrank(alice);
 
@@ -105,5 +107,31 @@ contract SecurityCouncilDrillTest is AragonTest {
 
         assertFalse(drill.hasPinged(nonce, carol));
         assertFalse(drill.hasPinged(nonce, david));
+    }
+
+    function test_start_singleTarget() public {
+        address target = address(0x123);
+        // Check that the event was emitted with the correct target
+        drill.start(target);
+        assertEq(drill.drillNonce(), 1);
+        address[] memory targets = drill.getTargets(1);
+        assertEq(targets.length, 1);
+        assertEq(targets[0], target);
+    }
+
+    function test_start_multipleTargets() public {
+        address[] memory targets = new address[](3);
+        targets[0] = address(0x123);
+        targets[1] = address(0x456);
+        targets[2] = address(0x789);
+
+        // Check that the event was emitted with the correct targets
+        drill.start(targets);
+        assertEq(drill.drillNonce(), 1);
+        address[] memory storedTargets = drill.getTargets(1);
+        assertEq(storedTargets.length, 3);
+        assertEq(storedTargets[0], targets[0]);
+        assertEq(storedTargets[1], targets[1]);
+        assertEq(storedTargets[2], targets[2]);
     }
 }
